@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Asad ❤️</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<style>
+body {
+  background: radial-gradient(circle at top, #4a0e4e, #000);
+  color: white;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+.glow {
+  text-shadow: 0 0 10px #fff, 0 0 20px pink;
+}
+.heart {
+  position: absolute;
+  font-size: 20px;
+  animation: float 4s linear infinite;
+}
+@keyframes float {
+  from { transform: translateY(100vh); opacity:1; }
+  to { transform: translateY(-10vh); opacity:0; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="h-screen flex flex-col justify-center items-center text-center">
+  <h1 class="text-5xl md:text-7xl glow mb-6">Happy Birthday, My Love Asad ❤️</h1>
+  <p class="text-xl mb-8">In my world, there is only you.</p>
+  <button onclick="start()" class="px-6 py-3 border rounded-full">Step Into My Heart</button>
+</section>
+
+<!-- MAIN -->
+<div id="main" class="hidden">
+
+<!-- LOVE LETTER -->
+<section class="py-20 text-center">
+  <h2 class="text-3xl mb-6">My Love Letter</h2>
+  <p id="letter" class="max-w-2xl mx-auto text-lg"></p>
+</section>
+
+<!-- MEMORIES -->
+<section class="py-20 text-center">
+  <h2 class="text-3xl mb-10">Our Special Memories</h2>
+  <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+    <div class="p-4 border rounded"> 
+      <b>The First Unintentional Talk</b><br>
+      You feel like so known.
+    </div>
+
+    <div class="p-4 border rounded"> 
+      <b>Our First Date</b><br>
+      In a cafe sitting opposite to each other looking into each other’s eyes and making our future plan.
+    </div>
+
+    <div class="p-4 border rounded"> 
+      <b>The Confession</b><br>
+      When you confessed you loved me it was beautiful feeling.
+    </div>
+
+    <div class="p-4 border rounded"> 
+      <b>Today and Always</b><br>
+      Every day with you is a blessing. Happy birthday my love, my jaan, my man, my everything.
+    </div>
+
+  </div>
+</section>
+
+<!-- REASONS -->
+<section class="py-20 text-center">
+  <h2 class="text-3xl mb-8">Reasons I Love You</h2>
+  <div class="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+    <div class="border p-4">Your adorable smile</div>
+    <div class="border p-4">Your voice gives me peace</div>
+    <div class="border p-4">Your care</div>
+    <div class="border p-4">Your strength</div>
+    <div class="border p-4">Your poetry</div>
+    <div class="border p-4">The way you love me</div>
+  </div>
+</section>
+
+<!-- SURPRISE -->
+<section class="py-20 text-center">
+  <button onclick="surprise()" class="px-6 py-3 border rounded-full">Click for a Surprise 🎁</button>
+  <p id="msg" class="mt-6 text-xl"></p>
+</section>
+
+<!-- END -->
+<section class="py-20 text-center">
+  <h1 class="text-4xl glow">Happy Birthday My Forever ❤️</h1>
+  <p>You are my today, my tomorrow, and my always.</p>
+</section>
+
+</div>
+
+<script>
+const text = `Asad,
+I don’t even know where to begin… I love you more than anything in this world.
+
+For me, you are the only man in this entire universe.
+
+Your smile is the cutest thing I have ever seen.
+Your voice gives me peace.
+
+You are my strong man, my safe place, my support system.
+
+Your shairi touches my soul deeply.
+
+I don’t just love you… I feel you in every part of me.
+
+Forever yours ❤️`;
+
+let i=0;
+
+function type() {
+  if(i < text.length){
+    document.getElementById("letter").innerHTML += text.charAt(i) === "\n" ? "<br>" : text.charAt(i);
+    i++;
+    setTimeout(type, 30);
+  }
+}
+
+function start(){
+  document.getElementById("main").classList.remove("hidden");
+  type();
+  window.scrollTo({top: window.innerHeight, behavior:'smooth'});
+}
+
+function surprise(){
+  document.getElementById("msg").innerHTML =
+  "I would choose you in every lifetime, in every world, again and again ❤️";
+
+  for(let i=0;i<30;i++){
+    let h = document.createElement("div");
+    h.className="heart";
+    h.innerHTML="❤️";
+    h.style.left=Math.random()*100+"vw";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),4000);
+  }
+}
+</script>
+
+</body>
+</html>
